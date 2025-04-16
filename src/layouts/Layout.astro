@@ -1,26 +1,35 @@
 ---
-import './src/styles/global.css'
+import Header from '../components/Header.astro';
+import './src/styles/global.css';
+import '@fontsource-variable/inter';
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
-		<meta name="generator" content={Astro.generator} />
-		<title>Portafolio</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
+    <title>Portafolio</title>
+  </head>
+  <body class="bg-dark">
+    <Header />
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    font-family: 'Inter Variable', sans-serif;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
 </style>
