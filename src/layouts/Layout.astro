@@ -12,7 +12,12 @@ import '@fontsource-variable/inter';
     <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
     <title>Portafolio</title>
   </head>
-  <body class="bg-dark">
+  <body class="bg-neutral-950 flex flex-col h-screen">
+    <div
+      class="absolute top-0 z-[-2] h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+
     <Header />
     <slot />
   </body>
@@ -24,11 +29,5 @@ import '@fontsource-variable/inter';
   }
   html {
     font-family: 'Inter Variable', sans-serif;
-  }
-
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
   }
 </style>

@@ -1,24 +1,36 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
+import { Image } from 'astro:assets';
+import profileImg from '../assets/profile.webp';
+import veFlag from '../assets/ve.svg';
 ---
 
 <Layout>
   <main class="text-dark-50">
     <section class="w-full lg:w-[740px] mx-auto py-44">
+      <Image
+        src={profileImg}
+        alt="Foto de perfil de Alirio"
+        class="w-12 mb-4"
+      />
       <h1 class="text-5xl font-bold flex gap-x-2 pb-10">
         <span class="text-accent">¡Hola, soy Alirio! 👋</span>
         <a
           href="https://www.linkedin.com/in/alirioi/"
           target="_blank"
           rel="noopener"
-          class="flex items-center"><Badge>Disponible para trabajar</Badge></a
+          class="flex h-fit my-auto"><Badge>Disponible para trabajar</Badge></a
         >
       </h1>
-      <h2 class="text-xl opacity-80">
-        Desarrollador Web Full Stack en formación de Mérida, Venezuela 🇻🇪. Me
-        apasiona transformar ideas en soluciones digitales eficientes. ¡Estoy
-        listo para aportar creatividad y compromiso a nuevos desafíos!
+      <h2 class="text-xl opacity-85">
+        Desarrollador Web Full Stack en formación de Mérida, Venezuela <Image
+          src={veFlag}
+          alt="Bandera de Venezuela"
+          class="size-6 inline-block self-center"
+        /><br />
+        Me apasiona transformar ideas en soluciones digitales eficientes. <br />
+        ¡Estoy listo para aportar creatividad y compromiso a nuevos desafíos!
       </h2>
     </section>
   </main>
