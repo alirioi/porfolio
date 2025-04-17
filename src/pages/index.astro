@@ -8,14 +8,14 @@ import veFlag from '../assets/ve.svg';
 
 <Layout>
   <main class="text-dark-50">
-    <section class="w-full lg:w-[740px] mx-auto py-44">
+    <section class="w-full lg:w-[740px] mx-auto py-40">
       <Image
         src={profileImg}
         alt="Foto de perfil de Alirio"
-        class="w-12 mb-4"
+        class="w-16 mb-4"
       />
-      <h1 class="text-5xl font-bold flex gap-x-2 pb-10">
-        <span class="text-accent">¡Hola, soy Alirio! 👋</span>
+      <h1 class="text-5xl font-bold flex gap-x-2 pb-10 text-primary">
+        ¡Hola, soy Alirio! 👋
         <a
           href="https://www.linkedin.com/in/alirioi/"
           target="_blank"
@@ -23,14 +23,22 @@ import veFlag from '../assets/ve.svg';
           class="flex h-fit my-auto"><Badge>Disponible para trabajar</Badge></a
         >
       </h1>
-      <h2 class="text-xl opacity-85">
-        Desarrollador Web Full Stack en formación de Mérida, Venezuela <Image
+      <h2 class="text-xl font-light">
+        <span class="text-accent font-bold"
+          >Desarrollador Web Full Stack en formación
+        </span> de <span class="font-bold text-primary-300"
+          >Mérida, Venezuela</span
+        >
+        <Image
           src={veFlag}
           alt="Bandera de Venezuela"
-          class="size-6 inline-block self-center"
+          class="size-6 inline-block self-center ml-1"
         /><br />
-        Me apasiona transformar ideas en soluciones digitales eficientes. <br />
-        ¡Estoy listo para aportar creatividad y compromiso a nuevos desafíos!
+        <span class="opacity-85"
+          >Me apasiona transformar ideas en soluciones digitales eficientes. <br
+          />
+          ¡Estoy listo para aportar creatividad y compromiso a nuevos desafíos!
+        </span>
       </h2>
     </section>
   </main>
