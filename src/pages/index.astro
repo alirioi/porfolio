@@ -3,10 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import Badge from '../components/Badge.astro';
 import { Image } from 'astro:assets';
 import profileImg from '../assets/profile.webp';
-import veFlag from '../assets/ve.svg';
+import VeFlag from '../components/icons/VeFlag.astro';
+import SocialPill from '../components/icons/SocialPill.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import MailIcon from '../components/icons/Mail.astro';
 ---
 
-<Layout>
+<Layout
+  title="Portafolio de Alirio Isea - Desarrollador y Programador Web"
+  description="Contrata a Alirio Isea, un desarrollador web full stack en formación. Con experiencia en HTML, CSS, JavaScript y frameworks como React y Astro. ¡Listo para transformar tus ideas en soluciones digitales!"
+>
   <main class="text-dark-50">
     <section class="w-full lg:w-[740px] mx-auto py-40">
       <Image
@@ -14,7 +21,7 @@ import veFlag from '../assets/ve.svg';
         alt="Foto de perfil de Alirio"
         class="w-16 mb-4"
       />
-      <h1 class="text-5xl font-bold flex gap-x-2 pb-10 text-primary">
+      <h1 class="text-5xl font-bold flex gap-x-3 pb-10 text-primary">
         ¡Hola, soy Alirio! 👋
         <a
           href="https://www.linkedin.com/in/alirioi/"
@@ -29,17 +36,29 @@ import veFlag from '../assets/ve.svg';
         </span> de <span class="font-bold text-primary-300"
           >Mérida, Venezuela</span
         >
-        <Image
-          src={veFlag}
-          alt="Bandera de Venezuela"
-          class="size-6 inline-block self-center ml-1"
-        /><br />
+        <VeFlag class="size-6 inline-block self-center ml-1" />
+
+        <br />
         <span class="opacity-85"
           >Me apasiona transformar ideas en soluciones digitales eficientes. <br
           />
           ¡Estoy listo para aportar creatividad y compromiso a nuevos desafíos!
         </span>
       </h2>
+      <nav class="flex gap-x-4 mt-8 text-dark-400">
+        <SocialPill href="https://www.linkedin.com/in/alirioi/">
+          <LinkedInIcon class="size-5" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://www.github.com/alirioi">
+          <GitHubIcon class="size-5" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="/">
+          <MailIcon class="size-5" />
+          isealirio@gmail.com
+        </SocialPill>
+      </nav>
     </section>
   </main>
 </Layout>
