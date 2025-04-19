@@ -7,7 +7,12 @@ import profileImg from '../assets/profile.webp';
   class="flex justify-between items-center py-5 px-3 md:px-6 w-full max-w-5xl mx-auto"
 >
   <div class="flex items-center gap-3">
-    <Image src={profileImg} alt="Foto de perfil de Alirio" class="size-10" />
+    <Image
+      src={profileImg}
+      alt="Foto de perfil de Alirio"
+      class="size-10"
+      loading="eager"
+    />
     <p class="flex flex-col">
       <span class="text-primary font-medium text-sm md:text-base">
         Alirio Isea
