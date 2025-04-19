@@ -1,4 +1,12 @@
 <span
-  class="bg-primary-900 text-dark-50 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm hover:bg-primary-300 transition-all duration-200 ease-in-out"
-  ><slot /></span
+  class="bg-dark inline-flex items-center px-2 py-1 text-xs font-semibold rounded-md border border-dark-200"
 >
+  <span class="mr-1.5 flex h-3 w-3 items-center">
+    <span
+      class="absolute inline-flex h-2 w-2 animate-ping rounded-full opacity-75 bg-primary-300"
+    ></span>
+    <span class="relative inline-flex h-2 w-2 rounded-full bg-primary-300"
+    ></span>
+  </span>
+  <slot />
+</span>
