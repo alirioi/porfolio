@@ -15,7 +15,7 @@ import MailIcon from '../components/icons/Mail.astro';
   title="Portafolio de Alirio Isea - Desarrollador y Programador Web"
   description="Contrata a Alirio Isea, un desarrollador web full stack en formación. Con experiencia en HTML, CSS, JavaScript y frameworks como React y Astro. ¡Listo para transformar tus ideas en soluciones digitales!"
 >
-  <main class="text-dark-50">
+  <main class="text-dark-50 px-12 md:px-0">
     <SectionContainer class="py-40 pb-24">
       <div class="flex gap-x-5 md:gap-x-8">
         <Image
@@ -40,7 +40,7 @@ import MailIcon from '../components/icons/Mail.astro';
           >
         </div>
       </div>
-      <h2 class="text-lg md:text-xl font-light text-pretty md:text-balance">
+      <h2 class="text-lg md:text-xl font-light text-pretty md:text-wrap">
         <span class="text-accent font-bold"
           >Desarrollador Web Full Stack en formación
         </span> de <span class="font-bold text-primary-300"
@@ -64,6 +64,8 @@ import MailIcon from '../components/icons/Mail.astro';
         </SocialPill>
       </nav>
     </SectionContainer>
-    <SectionContainer />
+    <SectionContainer class="h-96"> Proyectos </SectionContainer>
+
+    <SectionContainer id="proyectos" />
   </main>
 </Layout>
