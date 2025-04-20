@@ -1,0 +1,57 @@
+---
+import { Image } from 'astro:assets';
+import profileImg from '../assets/profile.webp';
+import Badge from '../components/Badge.astro';
+import VeFlag from '../components/icons/VeFlag.astro';
+import SocialPill from '../components/icons/SocialPill.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import MailIcon from '../components/icons/Mail.astro';
+---
+
+<div class="">
+  <div class="flex gap-x-5 md:gap-x-8">
+    <Image
+      src={profileImg}
+      alt="Foto de perfil de Alirio"
+      class="size-26 md:size-32 mb-6"
+      loading="eager"
+    />
+    <div>
+      <h1 class="flex flex-col text-3xl md:text-5xl font-bold pb-4">
+        <span class="text-primary">Alirio Isea</span>
+        <span class="text-xl md:text-3xl font-light text-dark-400">
+          Desarrollador Web
+        </span>
+      </h1>
+      <a
+        href="https://www.linkedin.com/in/alirioi/"
+        target="_blank"
+        rel="noopener"
+        class="mb-14 inline-block"
+        ><Badge>Disponible para nuevos proyectos</Badge></a
+      >
+    </div>
+  </div>
+  <h2 class="text-lg md:text-xl font-light text-pretty md:text-balance">
+    <span class="text-accent font-bold"
+      >Desarrollador Web Full Stack en formación
+    </span> de <span class="font-bold text-primary-300">Mérida, Venezuela</span>
+    <VeFlag class="size-6 inline-block self-center ml-1" />
+    ¡Estoy listo para aportar creatividad y compromiso a nuevos desafíos!
+  </h2>
+  <nav class="flex flex-wrap gap-4 mt-8 text-dark-400">
+    <SocialPill href="https://www.linkedin.com/in/alirioi/">
+      <LinkedInIcon class="size-4" />
+      LinkedIn
+    </SocialPill>
+    <SocialPill href="https://www.github.com/alirioi">
+      <GitHubIcon class="size-4" />
+      GitHub
+    </SocialPill>
+    <SocialPill>
+      <MailIcon class="size-5" />
+      isealirio@gmail.com
+    </SocialPill>
+  </nav>
+</div>
