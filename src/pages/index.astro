@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import SectionContainer from '../components/SectionContainer.astro';
+import TitleSection from '../components/TitleSection.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import Projects from '../components/Projects.astro';
 ---
@@ -15,10 +16,10 @@ import Projects from '../components/Projects.astro';
       <Hero />
     </SectionContainer>
     <SectionContainer id="proyectos">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <TitleSection>
         <CodeIcon class="size-7" />
         Proyectos
-      </h2>
+      </TitleSection>
       <Projects />
     </SectionContainer>
   </main>
