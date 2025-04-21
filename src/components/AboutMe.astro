@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import aboutMeImg from '../assets/images/about-me.webp';
+---
+
+<article
+  class="flex flex-col items-center justify-center gap-8 text-dark-50 md:flex-row"
+>
+  <div class="[&>p]:mb-4 text-pretty order-2 md:order-1">
+    <p>
+      Me llamo Alirio Isea, y mi historia con la programación comenzó a los 11
+      años, cuando en el colegio me enseñaron Pascal. Aquellas primeras líneas
+      de código no solo resolvían problemas: <strong>creaban mundos</strong>.
+      Ese asombro inicial nunca se apagó; hoy sigo viendo la programación como
+      un <strong>espacio infinito</strong> para materializar ideas.
+    </p>
+
+    <p>
+      Tras explorar Ingeniería de Sistemas, donde dominé bases sólidas con
+      C/C++, decidí seguir un camino autodidacta. La universidad me dio
+      herramientas, pero sentí que el verdadero potencial estaba <em
+        >fuera de los planes de estudio</em
+      >. Fue entonces cuando descubrí JavaScript y el desarrollo web.
+    </p>
+
+    <p>
+      Los últimos dos años los he dedicado a aprender con disciplina
+      autodidacta, guiado por plataformas como <a
+        href="https://www.platzi.com"
+        class="text-accent font-semibold">Platzi</a
+      > y desarrolladores como <a
+        href="https://www.midu.dev"
+        class="text-accent font-semibold">Midudev</a
+      > y <a href="https://www.moure.dev" class="text-accent font-semibold"
+        >Mouredev</a
+      >, quienes me enseñaron que <em
+        >la tecnología no solo se estudia, sino que se experimenta</em
+      >. Hoy soy desarrollador frontend, pero mi curiosidad va más allá: estoy
+      expandiendo mis habilidades hacia el backend para convertirme en full
+      stack, siempre con la meta de crear soluciones que equilibren elegancia,
+      funcionalidad y escalabilidad.
+    </p>
+  </div>
+
+  <Image
+    src={aboutMeImg}
+    alt="Alirio Isea"
+    class="order-1 object-cover w-64 h-full p-1 md:order-2 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-primary-900/40 ring-1 ring-dark-200"
+    loading="lazy"
+  />
+</article>
+
+<style>
+  p > strong {
+    color: #81c784;
+    font-weight: semibold;
+  }
+
+  p > em {
+    color: #81c784;
+    font-weight: normal;
+    font-style: italic;
+  }
+</style>

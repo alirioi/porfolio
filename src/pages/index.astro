@@ -1,10 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+import AboutMe from '../components/AboutMe.astro';
+import CodeIcon from '../components/icons/Code.astro';
 import Hero from '../components/Hero.astro';
+import ProfileIcon from '../components/icons/Profile.astro';
+import Projects from '../components/Projects.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import TitleSection from '../components/TitleSection.astro';
-import CodeIcon from '../components/icons/Code.astro';
-import Projects from '../components/Projects.astro';
 ---
 
 <Layout
@@ -12,15 +15,24 @@ import Projects from '../components/Projects.astro';
   description="Contrata a Alirio Isea, un desarrollador web full stack en formación. Con experiencia en HTML, CSS, JavaScript y frameworks como React y Astro. ¡Listo para transformar tus ideas en soluciones digitales!"
 >
   <main class="text-dark-50 px-8 md:px-0">
-    <SectionContainer class="py-40 pb-24">
+    <SectionContainer class="pb-16 py-36 md:pb-36">
       <Hero />
     </SectionContainer>
-    <SectionContainer id="proyectos">
+
+    <SectionContainer id="proyectos" class="pb-24">
       <TitleSection>
         <CodeIcon class="size-7" />
         Proyectos
       </TitleSection>
       <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi">
+      <TitleSection>
+        <ProfileIcon class="size-7" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe />
     </SectionContainer>
   </main>
 </Layout>
