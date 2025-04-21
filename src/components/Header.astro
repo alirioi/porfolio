@@ -1,7 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import profileImg from '../assets/profile.webp';
-
 const navItems = [
   {
     title: 'Proyectos',
@@ -9,14 +6,14 @@ const navItems = [
     url: '/#proyectos',
   },
   {
-    title: 'Tecnologías',
-    label: 'tecnologias',
-    url: '/#tecnologias',
-  },
-  {
     title: 'Sobre mí',
     label: 'sobre-mi',
     url: '/#sobre-mi',
+  },
+  {
+    title: 'Conocimientos',
+    label: 'conocimientos',
+    url: '/#conocimientos',
   },
   {
     title: 'Contacto',
@@ -27,25 +24,8 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 px-3 md:px-6"
+  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 px-2 md:px-6"
 >
-  <!-- <div
-    id="profile-info"
-    class="items-center gap-3 transition-opacity duration-300 opacity-0 hidden"
-  >
-    <Image
-      src={profileImg}
-      alt="Foto de perfil de Alirio"
-      class="size-10"
-      loading="eager"
-    />
-    <p class="flex flex-col">
-      <span class="text-primary font-medium text-sm md:text-base">
-        Alirio Isea
-      </span>
-      <span class="text-dark-50 text-xs font-light"> Desarrollador Web </span>
-    </p>
-  </div> -->
   <nav
     class="text-dark-50 flex px-3 justify-center items-center rounded-full text-sm font-medium"
   >
@@ -64,35 +44,66 @@ const navItems = [
 </header>
 
 <script>
-  document.addEventListener('astro:page-load', () => {
+  document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('header nav a');
 
+    const setActiveNavItem = (targetId: any) => {
+      navItems.forEach((item) => {
+        if (item.getAttribute('aria-label') === targetId) {
+          item.classList.add('text-primary-300'); // Clase activa
+        } else {
+          item.classList.remove('text-primary-300'); // Remover clase de los demás
+        }
+      });
+    };
+
+    // Determinar el threshold dinámico según el tamaño de la pantalla
+    const getThreshold = () => {
+      if (window.innerWidth < 768) {
+        return 0.5; // Pantallas pequeñas: activa cuando el 30% de la sección es visible
+      } else {
+        return 0.9; // Pantallas grandes: activa cuando el 70% de la sección es visible
+      }
+    };
+
+    // IntersectionObserver para detectar la sección visible
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute('aria-label') == entry.target.id) {
-              item.classList.add('text-primary-300');
-            } else {
-              item.classList.remove('text-primary-300');
-            }
-          });
+          setActiveNavItem(entry.target.id);
         }
       });
     };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
-      rootMargin: '0px',
-      threshold: 0.3,
+      rootMargin:
+        window.innerWidth < 768 ? '-5% 0px 10% 0px' : '-5% 0px 0px 0px', // Ajusta el margen superior e inferior
+      threshold: getThreshold(), // Detecta el % visible de la sección
     });
 
+    // Observar cada sección
     sections.forEach((section) => {
       observer.observe(section);
     });
 
-    // Cleanup function
+    // Evento click en los enlaces del menú
+    navItems.forEach((item) => {
+      item.addEventListener('click', (event) => {
+        event.preventDefault(); // Evitar el comportamiento predeterminado
+        const targetId: any = item.getAttribute('aria-label');
+        const targetSection = document.getElementById(targetId);
+
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
+          setActiveNavItem(targetId); // Actualizar el enlace activo
+          history.pushState(null, '', `/#${targetId}`);
+        }
+      });
+    });
+
+    // Cleanup para desconectar el observer cuando la página no está visible
     document.onvisibilitychange = () => {
       if (document.visibilityState === 'hidden') {
         observer.disconnect();
@@ -102,6 +113,19 @@ const navItems = [
         });
       }
     };
+
+    // Recalcular el threshold dinámico al redimensionar la ventana
+    window.addEventListener('resize', () => {
+      observer.disconnect(); // Desconectar el observer actual
+      const newObserver = new IntersectionObserver(callback, {
+        root: null,
+        rootMargin: '-15% 0px 0px 0px',
+        threshold: getThreshold(), // Recalcular el threshold
+      });
+      sections.forEach((section) => {
+        newObserver.observe(section);
+      });
+    });
   });
 </script>
 
