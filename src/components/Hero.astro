@@ -1,12 +1,14 @@
 ---
 import { Image } from 'astro:assets';
-import profileImg from '../assets/images/profile.webp';
+
 import Badge from '../components/Badge.astro';
-import VeFlag from '../components/icons/VeFlag.astro';
-import SocialPill from '../components/icons/SocialPill.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import CopyEmail from './CopyEmail.astro';
 import GitHubIcon from '../components/icons/GitHub.astro';
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
 import MailIcon from '../components/icons/Mail.astro';
+import SocialPill from '../components/icons/SocialPill.astro';
+import VeFlag from '../components/icons/VeFlag.astro';
+import profileImg from '../assets/images/profile.webp';
 ---
 
 <div class="">
@@ -49,9 +51,6 @@ import MailIcon from '../components/icons/Mail.astro';
       <GitHubIcon class="size-4" />
       GitHub
     </SocialPill>
-    <SocialPill>
-      <MailIcon class="size-5" />
-      isealirio@gmail.com
-    </SocialPill>
+    <CopyEmail />
   </nav>
 </div>
