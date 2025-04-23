@@ -1,13 +1,15 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import AboutMe from '../components/AboutMe.astro';
-import CodeIcon from '../components/icons/Code.astro';
-import Hero from '../components/Hero.astro';
-import ProfileIcon from '../components/icons/Profile.astro';
-import Projects from '../components/Projects.astro';
-import SectionContainer from '../components/SectionContainer.astro';
-import TitleSection from '../components/TitleSection.astro';
+import AboutMe from "../components/AboutMe.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Hero from "../components/Hero.astro";
+import Knowledge from "../components/Knowledge.astro";
+import ProfileIcon from "../components/icons/Profile.astro";
+import Projects from "../components/Projects.astro";
+import SchoolIcon from "../components/icons/School.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import TitleSection from "../components/TitleSection.astro";
 ---
 
 <Layout
@@ -19,7 +21,7 @@ import TitleSection from '../components/TitleSection.astro';
       <Hero />
     </SectionContainer>
 
-    <SectionContainer id="proyectos" class="pb-24">
+    <SectionContainer id="proyectos" class="mb-36">
       <TitleSection>
         <CodeIcon class="size-7" />
         Proyectos
@@ -27,12 +29,20 @@ import TitleSection from '../components/TitleSection.astro';
       <Projects />
     </SectionContainer>
 
-    <SectionContainer id="sobre-mi">
+    <SectionContainer id="sobre-mi" class="mb-36">
       <TitleSection>
         <ProfileIcon class="size-7" />
         Sobre mí
       </TitleSection>
       <AboutMe />
+    </SectionContainer>
+
+    <SectionContainer id="conocimientos" class="pb-24">
+      <TitleSection>
+        <SchoolIcon class="size-7" />
+        Conocimientos
+      </TitleSection>
+      <Knowledge />
     </SectionContainer>
   </main>
 </Layout>
