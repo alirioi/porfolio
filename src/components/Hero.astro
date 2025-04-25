@@ -1,13 +1,13 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
-import Badge from '../components/Badge.astro';
-import CopyEmail from './CopyEmail.astro';
-import GitHubIcon from '../components/icons/GitHub.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import SocialPill from '../components/SocialPill.astro';
-import VeFlag from '../components/icons/VeFlag.astro';
-import profileImg from '../assets/images/profile.webp';
+import Badge from "../components/Badge.astro";
+import CopyEmail from "./CopyEmail.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import VeFlag from "../components/icons/VeFlag.astro";
+import profileImg from "../assets/images/profile.webp";
 ---
 
 <div class="">
@@ -41,13 +41,15 @@ import profileImg from '../assets/images/profile.webp';
     <VeFlag class="size-6 inline-block self-center ml-1" />
     ¡Estoy listo para aportar creatividad y compromiso a nuevos desafíos!
   </h2>
-  <nav class="flex flex-wrap gap-4 mt-8 text-dark-400">
+  <nav
+    class="flex flex-wrap justify-center md:justify-start gap-4 mt-8 text-dark-400"
+  >
     <SocialPill href="https://www.linkedin.com/in/alirioi/">
-      <LinkedInIcon class="size-4" />
+      <LinkedInIcon class="size-5" />
       LinkedIn
     </SocialPill>
     <SocialPill href="https://www.github.com/alirioi">
-      <GitHubIcon class="size-4" />
+      <GitHubIcon class="size-5" />
       GitHub
     </SocialPill>
     <CopyEmail />
