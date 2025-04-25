@@ -1,18 +1,50 @@
+---
+import { Image } from "astro:assets";
+
+import profileImg from "../assets/images/profile.webp";
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import GithubIcon from "./icons/GitHub.astro";
+---
+
 <footer class="mb-10 mt-16 px-12">
   <div
     class="w-full mx-auto max-w-screen-xl md:flex md:items-center md:justify-between"
   >
-    <span class="text-sm text-dark-400 sm:text-center"
-      >© 2025 <a href="/" class="hover:text-primary-300">Alirio Isea</a>.
-    </span>
+    <div class="flex flex-row items-center gap-4">
+      <Image src={profileImg} alt="Alirio Isea" class="size-10" />
+      <span class="text-sm text-dark-400 sm:text-center cursor-pointer"
+        >© 2025 <a href="/" class="hover:text-primary-300">Alirio Isea</a>.
+      </span>
+      <LinkedInIcon
+        class="size-6 text-dark-400 hover:text-primary-300 cursor-pointer"
+        href="https://www.linkedin.com/in/alirioi/"
+      />
+      <GithubIcon
+        class="size-6 text-dark-400 hover:text-primary-300 cursor-pointer"
+        href="https://github.com/alirioi"
+      />
+    </div>
+
     <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium text-dark-400 sm:mt-0"
+      class="flex flex-wrap gap-4 items-center mt-3 text-sm font-medium text-dark-400 sm:mt-0"
     >
       <li>
-        <a href="mailto:isealirio@gmail.com" class="hover:text-primary-300"
-          >Contacto</a
+        <a
+          href="mailto:isealirio@gmail.com"
+          class="hover:text-primary-300 cursor-pointer">Contacto</a
         >
       </li>
+      <li id="inicio" class="hover:text-primary-300 cursor-pointer">Inicio</li>
     </ul>
   </div>
 </footer>
+<script>
+  const inicio = document.getElementById("inicio");
+  if (inicio)
+    inicio.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+</script>
