@@ -1,14 +1,14 @@
 ---
-import ClipboardIcon from './icons/Clipboard.astro';
-import MailIcon from './icons/Mail.astro';
+import ClipboardIcon from "./icons/Clipboard.astro";
+import MailIcon from "./icons/Mail.astro";
 ---
 
 <div
-  class="bg-dark rounded-full border border-dark-200 flex justify-center items-center gap-x-2 py-1 px-4 text-sm hover:bg-primary-300 hover:border-primary-300 hover:text-dark-50 hover:scale-110 transition-all duration-200 ease-in-out"
+  class="bg-dark rounded-full border border-dark-200 flex justify-center items-center gap-x-2 py-0 px-4 text-sm hover:bg-primary-300 hover:border-primary-300 hover:text-dark-50 hover:scale-110 transition-all duration-200 ease-in-out"
 >
   <MailIcon class="size-5" />
   isealirio@gmail.com
-  <button class="flex items-center px-2 cursor-pointer" id="copy-email">
+  <button class="flex items-center p-2 cursor-pointer" id="copy-email">
     <ClipboardIcon class="size-5" />
   </button>
 </div>
@@ -19,22 +19,22 @@ import MailIcon from './icons/Mail.astro';
 </div>
 
 <script>
-  const copyBtn = document.getElementById('copy-email');
-  const alertContainer = document.getElementById('alert');
+  const copyBtn = document.getElementById("copy-email");
+  const alertContainer = document.getElementById("alert");
 
   // Función para mostrar el aviso de copiado
   function mostrarAviso(mensaje: string) {
     // Limpiar avisos anteriores si existen
-    if (alertContainer) alertContainer.innerHTML = '';
+    if (alertContainer) alertContainer.innerHTML = "";
 
     // Crear el elemento del aviso
-    const avisoDiv = document.createElement('div');
+    const avisoDiv = document.createElement("div");
     avisoDiv.className =
-      'py-2 px-4 text-sm text-primary-300 rounded-4xl bg-dark shadow-md';
-    avisoDiv.setAttribute('role', 'alert');
+      "py-2 px-4 text-sm text-primary-300 rounded-4xl bg-dark shadow-md";
+    avisoDiv.setAttribute("role", "alert");
 
-    const avisoSpan = document.createElement('span');
-    avisoSpan.className = 'font-medium';
+    const avisoSpan = document.createElement("span");
+    avisoSpan.className = "font-medium";
     avisoSpan.textContent = mensaje; // Usamos el mensaje pasado como argumento
 
     avisoDiv.appendChild(avisoSpan);
@@ -44,18 +44,18 @@ import MailIcon from './icons/Mail.astro';
 
     // Eliminar el aviso después de 3 segundos (3000 milisegundos)
     setTimeout(() => {
-      avisoDiv.classList.add('fade-out');
+      avisoDiv.classList.add("fade-out");
       avisoDiv.remove();
     }, 3000);
   }
 
-  copyBtn?.addEventListener('click', async () => {
+  copyBtn?.addEventListener("click", async () => {
     try {
-      await navigator.clipboard.writeText('isealirio@gmail.com');
-      console.log('Texto copiado al portapapeles');
-      mostrarAviso('Se ha copiado el correo en el portapapeles');
+      await navigator.clipboard.writeText("isealirio@gmail.com");
+      console.log("Texto copiado al portapapeles");
+      mostrarAviso("Se ha copiado el correo en el portapapeles");
     } catch (err) {
-      console.error('Error al copiar el texto: ', err);
+      console.error("Error al copiar el texto: ", err);
     }
   });
 </script>
