@@ -1,24 +1,24 @@
 ---
 const navItems = [
   {
-    title: 'Proyectos',
-    label: 'proyectos',
-    url: '/#proyectos',
+    title: "Proyectos",
+    label: "proyectos",
+    url: "/#proyectos",
   },
   {
-    title: 'Sobre mí',
-    label: 'sobre-mi',
-    url: '/#sobre-mi',
+    title: "Sobre mí",
+    label: "sobre-mi",
+    url: "/#sobre-mi",
   },
   {
-    title: 'Conocimientos',
-    label: 'conocimientos',
-    url: '/#conocimientos',
+    title: "Conocimientos",
+    label: "conocimientos",
+    url: "/#conocimientos",
   },
   {
-    title: 'Contacto',
-    label: 'contacto',
-    url: 'mailto:isealirio@gmail.com',
+    title: "Contacto",
+    label: "contacto",
+    url: "/#contacto",
   },
 ];
 ---
@@ -44,16 +44,16 @@ const navItems = [
 </header>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const sections = document.querySelectorAll('section');
-    const navItems = document.querySelectorAll('header nav a');
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navItems = document.querySelectorAll("header nav a");
 
     const setActiveNavItem = (targetId: any) => {
       navItems.forEach((item) => {
-        if (item.getAttribute('aria-label') === targetId) {
-          item.classList.add('text-primary-300'); // Clase activa
+        if (item.getAttribute("aria-label") === targetId) {
+          item.classList.add("text-primary-300"); // Clase activa
         } else {
-          item.classList.remove('text-primary-300'); // Remover clase de los demás
+          item.classList.remove("text-primary-300"); // Remover clase de los demás
         }
       });
     };
@@ -61,15 +61,18 @@ const navItems = [
     // Determinar el threshold dinámico según el tamaño de la pantalla
     const getThreshold = () => {
       if (window.innerWidth < 768) {
-        return 0.5; // Pantallas pequeñas: activa cuando el 30% de la sección es visible
+        return 0.35; // Pantallas pequeñas: activa cuando el 30% de la sección es visible
       } else {
-        return 0.9; // Pantallas grandes: activa cuando el 70% de la sección es visible
+        return 0.4; // Pantallas grandes: activa cuando el 70% de la sección es visible
       }
     };
 
     // IntersectionObserver para detectar la sección visible
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
+        console.log(
+          `Section ${entry.target.id} is intersecting: ${entry.isIntersecting}`
+        );
         if (entry.isIntersecting) {
           setActiveNavItem(entry.target.id);
         }
@@ -78,8 +81,8 @@ const navItems = [
 
     const observer = new IntersectionObserver(callback, {
       root: null,
-      rootMargin:
-        window.innerWidth < 768 ? '-5% 0px 10% 0px' : '-5% 0px 0px 0px', // Ajusta el margen superior e inferior
+      rootMargin: window.innerWidth < 768 ? "-10% 0px 10% 0px" : "0px", // Ajusta el margen superior e inferior
+
       threshold: getThreshold(), // Detecta el % visible de la sección
     });
 
@@ -90,22 +93,22 @@ const navItems = [
 
     // Evento click en los enlaces del menú
     navItems.forEach((item) => {
-      item.addEventListener('click', (event) => {
+      item.addEventListener("click", (event) => {
         event.preventDefault(); // Evitar el comportamiento predeterminado
-        const targetId: any = item.getAttribute('aria-label');
+        const targetId: any = item.getAttribute("aria-label");
         const targetSection = document.getElementById(targetId);
 
         if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth' }); // Desplazamiento suave
+          targetSection.scrollIntoView({ behavior: "smooth" }); // Desplazamiento suave
           setActiveNavItem(targetId); // Actualizar el enlace activo
-          history.pushState(null, '', `/#${targetId}`);
+          history.pushState(null, "", `/#${targetId}`);
         }
       });
     });
 
     // Cleanup para desconectar el observer cuando la página no está visible
     document.onvisibilitychange = () => {
-      if (document.visibilityState === 'hidden') {
+      if (document.visibilityState === "hidden") {
         observer.disconnect();
       } else {
         sections.forEach((section) => {
@@ -115,11 +118,11 @@ const navItems = [
     };
 
     // Recalcular el threshold dinámico al redimensionar la ventana
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
       observer.disconnect(); // Desconectar el observer actual
       const newObserver = new IntersectionObserver(callback, {
         root: null,
-        rootMargin: '-15% 0px 0px 0px',
+        rootMargin: window.innerWidth < 768 ? "-10% 0px 10% 0px" : "0px",
         threshold: getThreshold(), // Recalcular el threshold
       });
       sections.forEach((section) => {
