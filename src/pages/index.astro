@@ -4,12 +4,15 @@ import Layout from "../layouts/Layout.astro";
 import AboutMe from "../components/AboutMe.astro";
 import CodeIcon from "../components/icons/Code.astro";
 import Hero from "../components/Hero.astro";
-import Knowledge from "../components/Knowledge.astro";
 import ProfileIcon from "../components/icons/Profile.astro";
 import Projects from "../components/Projects.astro";
 import SchoolIcon from "../components/icons/School.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import TitleSection from "../components/TitleSection.astro";
+import CertificateIcon from "../components/icons/Certificate.astro";
+import Certificates from "../components/Certificates.astro";
+import Technologies from "../components/Technologies.astro";
+import StarIcon from "../components/icons/Star.astro";
 ---
 
 <Layout
@@ -21,7 +24,7 @@ import TitleSection from "../components/TitleSection.astro";
       <Hero />
     </SectionContainer>
 
-    <SectionContainer id="proyectos" class="mb-36">
+    <SectionContainer id="proyectos" class="mb-24 md:mb-32">
       <TitleSection>
         <CodeIcon class="size-7" />
         Proyectos
@@ -29,7 +32,7 @@ import TitleSection from "../components/TitleSection.astro";
       <Projects />
     </SectionContainer>
 
-    <SectionContainer id="sobre-mi" class="mb-36">
+    <SectionContainer id="sobre-mi" class="mb-24 md:mb-32">
       <TitleSection>
         <ProfileIcon class="size-7" />
         Sobre mí
@@ -37,12 +40,23 @@ import TitleSection from "../components/TitleSection.astro";
       <AboutMe />
     </SectionContainer>
 
-    <SectionContainer id="conocimientos" class="pb-24">
+    <SectionContainer id="conocimientos" class="mb-24 md:mb-32">
       <TitleSection>
         <SchoolIcon class="size-7" />
         Conocimientos
       </TitleSection>
-      <Knowledge />
+
+      <TitleSection class="text-xl text-accent">
+        <CertificateIcon class="size-6" />
+        Certificaciones
+      </TitleSection>
+      <Certificates />
+
+      <TitleSection class="text-xl text-accent">
+        <StarIcon class="size-6" />
+        Tecnologías
+      </TitleSection>
+      <Technologies />
     </SectionContainer>
   </main>
 </Layout>

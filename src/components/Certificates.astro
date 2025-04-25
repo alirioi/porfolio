@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+
+import apiImg from "../assets/certificates/api.webp";
+import reactImg from "../assets/certificates/react.webp";
+import frontendImg from "../assets/certificates/frontend.webp";
+import javascriptImg from "../assets/certificates/javascript.webp";
+
+const CERTIFICATES = [
+  {
+    title: "Curso de Frontend Developer",
+    link: "https://platzi.com/p/alirioi/curso/2467-course/diploma/detalle/",
+    image: frontendImg,
+  },
+  {
+    title: "Curso de JavaScript desde Cero",
+    link: "https://platzi.com/p/alirioi/curso/8617-course/diploma/detalle/",
+    image: javascriptImg,
+  },
+  {
+    title: "Curso Profesional de Consumo de API REST con JavaScript",
+    link: "https://platzi.com/p/alirioi/curso/2942-course/diploma/detalle/",
+    image: apiImg,
+  },
+  {
+    title: "Curso de React.js con Vite.js y TailwindCSS",
+    link: "https://platzi.com/p/alirioi/curso/7396-course/diploma/detalle/",
+    image: reactImg,
+  },
+];
+---
+
+<article
+  class="flex flex-col items-center justify-center gap-6 text-dark-50 mb-12"
+>
+  <p class="text-pretty">
+    Todas mis certificaciones provienen de la plataforma de cursos <a
+      href="https://www.platzi.com"
+      target="_blank"
+      rel="noopener"
+      class="text-primary-300 font-semibold">Platzi</a
+    >, en donde cuento con <strong>+30 cursos aprobados</strong> relacionados al
+    desarrollo web. Estos son unos de mis principales certificados:
+  </p>
+
+  <div class="w-full flex flex-col items-center gap-y-4 md:gap-y-6">
+    <div
+      class="w-full flex flex-wrap gap-4 md:gap-8 justify-center items-center"
+    >
+      {
+        CERTIFICATES.map(({ title, link, image }) => (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener"
+            class="w-full lg:w-[48%] w- flex items-center gap-4 p-4 border border-dark-400 rounded-xl cursor-pointer rounded-xl hover:scale-105 transition duration-500 ease-in-out"
+          >
+            <Image
+              class="object-cover w-24 min-w-24  md:w-32 md:min-w-32 h-full rounded-xl"
+              src={image}
+              alt={`Certificado del ${title}`}
+              loading="lazy"
+            />
+            <h3 class="text-accent font-semibold text-pretty">{title}</h3>
+          </a>
+        ))
+      }
+    </div>
+    <p class="text-left block w-full text-pretty">
+      Puedes ver el resto de mis certificaciones en mi perfil de <a
+        href="https://platzi.com/p/alirioi/"
+        target="_blank"
+        rel="noopener"
+        class="text-primary-300 font-semibold">Platzi</a
+      > o en el de <a
+        href="https://www.linkedin.com/in/alirioi/"
+        target="_blank"
+        rel="noopener"
+        class="text-primary-300 font-semibold">LinkedIn</a
+      >
+    </p>
+  </div>
+</article>
+
+<style>
+  p > strong {
+    color: #03dac6;
+    font-weight: semibold;
+  }
+</style>

@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+
+import AstroIcon from "../components/icons/Astro.astro";
+import BunIcon from "../components/icons/Bun.astro";
+import CSSIcon from "../components/icons/CSS.astro";
+import ExpressIcon from "../components/icons/Express.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import GitIcon from "../components/icons/Git.astro";
+import HtmlIcon from "../components/icons/HTML.astro";
+import JavaScriptIcon from "../components/icons/JavaScript.astro";
+import JWTIcon from "../components/icons/JWT.astro";
+import MySQLIcon from "../components/icons/MySQL.astro";
+import NodeIcon from "../components/icons/Node.svg";
+import NPMIcon from "../components/icons/NPM.astro";
+import PostgreSQLIcon from "../components/icons/PostgreSQL.astro";
+import ReactIcon from "../components/icons/React.astro";
+import TailwindIcon from "../components/icons/Tailwind.astro";
+import TerminalIcon from "../components/icons/Terminal.astro";
+import ViteIcon from "../components/icons/Vite.astro";
+import WordPressIcon from "../components/icons/WordPress.astro";
+---
+
+<article class="flex flex-col gap-y-8">
+  <p class="text-pretty">
+    He trabajado con una variedad de tecnologías y herramientas en mis
+    proyectos. Aquí hay una lista de las principales tecnologías que manejo:
+  </p>
+
+  <div class="flex w-full gap-6 justify-center md:justify-evenly flex-wrap">
+    <div
+      class="bg-dark flex flex-col items-center w-48 border border-primary-700 rounded-lg p-4 gap-y-5"
+    >
+      <h3 class="text-primary font-semibold text-xl">Conocido</h3>
+      <div class="w-full flex flex-wrap items-center gap-4 justify-center">
+        <HtmlIcon class="size-10" />
+        <CSSIcon class="size-10" />
+        <JavaScriptIcon class="size-10" />
+        <ReactIcon class="size-10" />
+        <TailwindIcon class="size-10" />
+      </div>
+    </div>
+
+    <div
+      class="bg-dark flex flex-col items-center w-48 border border-accent rounded-lg p-4 gap-y-5"
+    >
+      <h3 class="text-accent font-semibold text-xl">Aprendiendo</h3>
+      <div class="w-full flex flex-wrap items-center gap-4 justify-center">
+        <AstroIcon class="size-10" />
+        <MySQLIcon class="size-10" />
+        <PostgreSQLIcon class="size-10" />
+        <ExpressIcon class="size-10" />
+        <Image src={NodeIcon} alt="Node.js" class="size-10" loading="lazy" />
+      </div>
+    </div>
+
+    <div
+      class="bg-dark flex flex-col items-center w-48 border border-dark-200 rounded-lg p-4 gap-y-5"
+    >
+      <h3 class="text-dark-400 font-semibold text-xl">Herramientas</h3>
+      <div class="w-full flex flex-wrap items-center gap-4 justify-center">
+        <GitIcon class="size-10" />
+        <GitHubIcon class="size-10" />
+        <TerminalIcon class="size-10" />
+        <NPMIcon class="size-10" />
+        <BunIcon class="size-10" />
+        <WordPressIcon class="size-10" />
+      </div>
+    </div>
+  </div>
+</article>
