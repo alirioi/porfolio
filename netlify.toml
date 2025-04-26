@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "/e-commerce/*"
+  to = "https://alirioi-ecommerce.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/todo-machine/*"
+  to = "https://alirioi-todomachine.netlify.app/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/movie-app/*"
+  to = "https://alirioi-movieapp.netlify.app/:splat"
+  status = 200
+  force = true
