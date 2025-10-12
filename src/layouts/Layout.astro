@@ -1,9 +1,8 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import "../styles/global.css";
 import "@fontsource-variable/inter";
-import GoogleAnalytics from "../components/GoogleAnalytics.astro";
+
 interface Props {
   title: string;
   description: string;
@@ -28,7 +27,6 @@ const { title, description } = Astro.props;
     />
     <meta name="author" content="Alirio Isea" />
     <link rel="canonical" href="https://alirioi.dev" />
-    <GoogleAnalytics />
   </head>
 
   <body class="bg-neutral-950 flex flex-col min-h-screen">
@@ -43,6 +41,21 @@ const { title, description } = Astro.props;
 </html>
 
 <style is:global>
+  @import "tailwindcss";
+
+  @theme {
+    --color-primary: #4caf50; /* #4CAF50 */
+    --color-primary-300: #81c784; /* Hover/Interactivos*/
+    --color-primary-700: #388e3c; /* Bordes/Detalles*/
+    --color-primary-900: #1b5e20; /* Fondos oscuros*/
+
+    --color-dark: #111111; /* Fondo principal */
+    --color-dark-200: #424242; /* Bordes secundarios */
+    --color-dark-400: #757575; /* Texto secundario*/
+    --color-dark-50: #fafafa; /* Texto principal */
+
+    --color-accent: #03dac6; /*Destacar elementos clave*/
+  }
   * {
     box-sizing: border-box;
   }
