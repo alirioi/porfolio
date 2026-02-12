@@ -20,13 +20,23 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <!-- SEO Meta Tags -->
     <meta
       name="keywords"
-      content="Desarrollo Web, Desarrollo Frontend, Desarrollo Full-Stack, Desarrollo Backend, Web Developer, Frontend Developer, Full-Stack Developer, Backend Developer, Programador Web, Programador Frontend, Programador Full-Stack, Programador Backend, HTML, CSS, JavaScript, React, Astro, TailwindCSS, Node.js, Express.js, MongoDB, SQL, Git, GitHub, API RESTful, Responsive Design"
+      content="Desarrollador Frontend, React Developer, Astro Framework, Tailwind CSS, Full Stack Developer, Node.js, Desarrollo Web Mérida Venezuela, Alirio Isea, JavaScript"
     />
     <meta name="author" content="Alirio Isea" />
     <link rel="canonical" href="https://alirioi.dev" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alirioi.dev/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://alirioi.dev/og-image.jpg" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://alirioi.dev/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content="https://alirioi.dev/og-image.jpg" />
   </head>
 
   <body class="bg-neutral-950 flex flex-col min-h-screen">
