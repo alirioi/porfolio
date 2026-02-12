@@ -1,5 +1,6 @@
 ---
 import LinkButton from "./LinkButton.astro";
+import SendIcon from "./icons/Send.astro";
 ---
 
 <div class="w-full flex flex-col items-center gap-y-8">
@@ -9,5 +10,8 @@ import LinkButton from "./LinkButton.astro";
   <h2 class="text-3xl md:text-4xl text-primary-300 font-medium">
     ¡Trabajemos juntos!
   </h2>
-  <LinkButton href="mailto:isealirio@gmail.com">Contactame</LinkButton>
+  <LinkButton href="mailto:isealirio@gmail.com">
+    <SendIcon class="size-6" />
+    <span class="text-xl font-bold px-3">Contáctame</span>
+  </LinkButton>
 </div>
