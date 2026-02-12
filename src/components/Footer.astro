@@ -8,16 +8,20 @@ import GithubIcon from "./icons/GitHub.astro";
 
 <footer class="mt-16 mb-8 md:mb-0 p-8 md:p-12 border-t border-dark-200">
   <div
-    class="w-full mx-auto max-w-screen-xl flex items-center justify-center gap-8"
+    class="w-full mx-auto max-w-screen-xl flex items-center just justify-between"
   >
     <div class="flex gap-x-4 items-center">
-      <Image src={profileImg} alt="Alirio Isea" class="size-10" />
-      <span
-        class="text-sm md:text-md text-dark-400 sm:text-center cursor-pointer"
-        >© 2026 <a href="/" class="hover:text-primary-300">Alirio Isea</a>
+      <a
+        href="/"
+        class="hover:text-primary-300 hover:scale-110 transition-all duration-200 ease-in-out cursor-pointer"
+      >
+        <Image src={profileImg} alt="Alirio Isea" class="size-10 md:size-12" />
+      </a>
+      <span class="text-sm md:text-md text-dark-400 sm:text-center"
+        >© 2026 Alirio Isea
       </span>
     </div>
-    <div class="flex gap-x-4">
+    <div class="flex gap-x-6">
       <LinkedInIcon
         class="size-7 text-dark-400 hover:text-primary-300 hover:scale-110 transition-all duration-200 ease-in-out cursor-pointer"
         href="https://www.linkedin.com/in/alirioi/"
