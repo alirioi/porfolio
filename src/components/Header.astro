@@ -27,7 +27,7 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 px-2 md:px-6"
 >
   <nav
-    class="text-dark-50 flex px-3 justify-center items-center rounded-full text-sm font-medium"
+    class="text-dark-50 flex px-3 justify-center items-center rounded-full text-[13px] md:text-sm font-medium"
   >
     {
       navItems.map((link) => (
@@ -71,7 +71,7 @@ const navItems = [
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         console.log(
-          `Section ${entry.target.id} is intersecting: ${entry.isIntersecting}`
+          `Section ${entry.target.id} is intersecting: ${entry.isIntersecting}`,
         );
         if (entry.isIntersecting) {
           setActiveNavItem(entry.target.id);
