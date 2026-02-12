@@ -23,48 +23,177 @@ import WordPressIcon from "../components/icons/WordPress.astro";
 
 <article class="flex flex-col gap-y-8">
   <p class="text-pretty">
-    He trabajado con una variedad de tecnologías y herramientas en mis
-    proyectos. Aquí hay una lista de las principales tecnologías que manejo:
+    Mi stack tecnológico está enfocado en crear productos digitales rápidos,
+    intuitivos y escalables. Me especializo en el <span
+      class="text-accent font-semibold">Frontend</span
+    >, pero mi formación <strong>Full Stack</strong> me permite comprender y gestionar
+    el flujo completo de los datos desde el servidor hasta la interfaz.
   </p>
 
   <div class="flex w-full gap-6 justify-center md:justify-evenly flex-wrap">
     <div
-      class="bg-dark flex flex-col items-center w-48 border border-primary-700 rounded-lg p-4 gap-y-5"
+      class="flex flex-col items-center w-48 border-2 border-primary-300 bg-dark shadow-lg shadow-primary-300/20 rounded-lg p-4 gap-y-5"
     >
-      <h3 class="text-primary font-semibold text-xl">Conocido</h3>
+      <h3 class="text-primary font-semibold text-xl">Frontend</h3>
       <div class="w-full flex flex-wrap items-center gap-4 justify-center">
-        <HtmlIcon class="size-10" />
-        <CSSIcon class="size-10" />
-        <JavaScriptIcon class="size-10" />
-        <ReactIcon class="size-10" />
-        <TailwindIcon class="size-10" />
-      </div>
-    </div>
+        <div class="group relative flex justify-center">
+          <HtmlIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            HTML
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <CSSIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            CSS
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <JavaScriptIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            JavaScript
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <ReactIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
 
-    <div
-      class="bg-dark flex flex-col items-center w-48 border border-accent rounded-lg p-4 gap-y-5"
-    >
-      <h3 class="text-accent font-semibold text-xl">Aprendiendo</h3>
-      <div class="w-full flex flex-wrap items-center gap-4 justify-center">
-        <AstroIcon class="size-10" />
-        <MySQLIcon class="size-10" />
-        <PostgreSQLIcon class="size-10" />
-        <ExpressIcon class="size-10" />
-        <Image src={NodeIcon} alt="Node.js" class="size-10" loading="lazy" />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            React
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <AstroIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            Astro
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <TailwindIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            Tailwind
+          </span>
+        </div>
       </div>
     </div>
 
     <div
       class="bg-dark flex flex-col items-center w-48 border border-dark-200 rounded-lg p-4 gap-y-5"
     >
+      <h3 class="font-semibold text-xl">Backend & DB</h3>
+      <div class="w-full flex flex-wrap items-center gap-4 justify-center">
+        <div class="group relative flex justify-center">
+          <Image
+            src={NodeIcon}
+            alt="Node.js"
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+            loading="lazy"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            Node.js
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <ExpressIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            Express
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <PostgreSQLIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            PostgreSQL
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <MySQLIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            MySQL
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-dark flex flex-col items-center w-48 rounded-lg p-4 gap-y-5">
       <h3 class="text-dark-400 font-semibold text-xl">Herramientas</h3>
       <div class="w-full flex flex-wrap items-center gap-4 justify-center">
-        <GitIcon class="size-10" />
-        <GitHubIcon class="size-10" />
-        <TerminalIcon class="size-10" />
-        <NPMIcon class="size-10" />
-        <BunIcon class="size-10" />
-        <WordPressIcon class="size-10" />
+        <div class="group relative flex justify-center">
+          <WordPressIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            WordPress
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <GitIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            Git
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <GitHubIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            GitHub
+          </span>
+        </div>
+        <div class="group relative flex justify-center">
+          <NPMIcon
+            class="size-10 transition-transform cursor-pointer group-hover:scale-110"
+          />
+          <span
+            class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
+          >
+            NPM
+          </span>
+        </div>
       </div>
     </div>
   </div>
