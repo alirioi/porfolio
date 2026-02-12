@@ -3,15 +3,15 @@ import ClipboardIcon from "./icons/Clipboard.astro";
 import MailIcon from "./icons/Mail.astro";
 ---
 
-<div
-  class="bg-dark rounded-full border border-dark-200 flex justify-center items-center gap-x-2 py-0 px-4 text-sm hover:bg-primary-300 hover:border-primary-300 hover:text-dark-50 hover:scale-110 transition-all duration-200 ease-in-out"
+<button
+  class="bg-dark rounded-full border border-dark-200 flex justify-center items-center cursor-pointer gap-x-2 py-0 px-4 text-sm hover:bg-primary-300 hover:border-primary-300 hover:text-dark-50 hover:scale-110 transition-all duration-200 ease-in-out"
+  id="copy-email"
+  aria-label="Copiar correo electrónico al portapapeles"
 >
   <MailIcon class="size-5" />
-  isealirio@gmail.com
-  <button class="flex items-center p-2 cursor-pointer" id="copy-email">
-    <ClipboardIcon class="size-5" />
-  </button>
-</div>
+  Email
+  <ClipboardIcon class="size-5" />
+</button>
 <div
   id="alert"
   class="fixed bottom-5 left-0 right-0 flex justify-center z-50 pointer-events-none px-4"
