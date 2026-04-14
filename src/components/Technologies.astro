@@ -10,7 +10,7 @@ import GitIcon from "../components/icons/Git.astro";
 import HtmlIcon from "../components/icons/HTML.astro";
 import JavaScriptIcon from "../components/icons/JavaScript.astro";
 import MySQLIcon from "../components/icons/MySQL.astro";
-import NodeIcon from "../components/icons/Node.svg";
+import NodeIcon from "../components/icons/Nodejs.astro";
 import NPMIcon from "../components/icons/NPM.astro";
 import PostgreSQLIcon from "../components/icons/PostgreSQL.astro";
 import ReactIcon from "../components/icons/React.astro";
@@ -105,11 +105,8 @@ import PostmanIcon from "../components/icons/Postman.astro";
       <h3 class="font-semibold text-xl">Backend & DB</h3>
       <div class="w-full flex flex-wrap items-center gap-4 justify-center">
         <div class="group relative flex justify-center">
-          <Image
-            src={NodeIcon}
-            alt="Node.js"
+          <NodeIcon
             class="size-10 transition-transform cursor-pointer group-hover:scale-110"
-            loading="lazy"
           />
           <span
             class="absolute -top-10 scale-0 rounded bg-dark-200 p-2 text-xs font-bold transition-all group-hover:scale-100 border border-accent/20"
