@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 
 import Css from "./icons/CSS.astro";
-import ecommerceImg from "../assets/projects/ecommerce.webp";
 import GitHubIcon from "./icons/GitHub.astro";
 import Html from "./icons/HTML.astro";
 import JavaScript from "./icons/JavaScript.astro";
@@ -10,6 +9,11 @@ import LinkButton from "./LinkButton.astro";
 import LinkIcon from "./icons/Link.astro";
 import React from "./icons/React.astro";
 import Tailwind from "./icons/Tailwind.astro";
+import Node from "./icons/Nodejs.astro";
+import API from "./icons/API.astro";
+import Serveless from "./icons/Serveless.astro";
+import shopifyImg from "../assets/projects/shopify-middleware.webp";
+import ecommerceImg from "../assets/projects/ecommerce.webp";
 import todoImg from "../assets/projects/todo.webp";
 
 const TAGS = {
@@ -33,11 +37,32 @@ const TAGS = {
     name: "Tailwind CSS",
     icon: Tailwind,
   },
+  NODE: {
+    name: "Node.js",
+    icon: Node,
+  },
+  API: {
+    name: "REST APIs",
+    icon: API,
+  },
+  SERVERLESS: {
+    name: "Serverless",
+    icon: Serveless,
+  },
 };
 
 const PROJECTS = [
   {
-    title: "Yard Sale - E-commerce",
+    title: "Middleware: Shopify - Shopmonkey ERP",
+    description:
+      "Middleware para sincronizar órdenes de Shopify con un ERP automotriz en tiempo real. Automatiza la creación de clientes, mapeo de servicios y facturación de dropshipping, eliminando la entrada manual de datos.",
+    link: "/middleware-shopify-erp",
+    github: "https://github.com/alirioi/shopify-erp-middleware",
+    image: shopifyImg,
+    tags: [TAGS.NODE, TAGS.SERVERLESS, TAGS.API],
+  },
+  {
+    title: "Yard Sale - eCommerce",
     description:
       "Implementación de un flujo de compra completo integrando una FakeAPI, optimizando el renderizado de productos y asegurando un diseño 100% responsivo con TailwindCSS.",
     link: "https://alirioi.dev/e-commerce/",
@@ -78,7 +103,7 @@ const PROJECTS = [
             <ul class="flex flex-row mb-2 gap-x-2">
               {tags.map((tag) => (
                 <li>
-                  <span class="flex gap-x-2 rounded-full border border-primary-700 text-dark-50 text-xs py-1 px-3 ">
+                  <span class="flex gap-x-2 rounded-full border border-primary-700 text-dark-50 text-xs md:text-[11px] lg:text-xs py-1 px-3 ">
                     <tag.icon class="size-4" />
                     {tag.name}
                   </span>
