@@ -8,6 +8,7 @@ import Shopify from "../components/icons/Shopify.astro";
 import ShopmonkeyIcon from "../components/icons/ShopmonkeyIcon.astro";
 import LightbulbIcon from "../components/icons/LightbulbIcon.astro";
 import CheckIcon from "../components/icons/CheckIcon.astro";
+import AnimatedConnector from "../components/AnimatedConnector.astro";
 ---
 
 <StandaloneLayout
@@ -20,7 +21,9 @@ import CheckIcon from "../components/icons/CheckIcon.astro";
         class="panel-bg border border-dark-200 rounded-xl p-6 flex flex-col md:flex-row items-center justify-between relative overflow-hidden my-12"
       >
         <div class="z-10 w-full text-center">
-          <h1 class="text-xl md:text-3xl font-bold text-dark-50 mb-2 uppercase">
+          <h1
+            class="text-2xl md:text-3xl font-bold text-dark-50 mb-2 uppercase"
+          >
             Automatización B2B: <span class="glow-text-primary">Shopify</span>
             <span class="text-dark-50 mx-2">↔</span>
             <span class="glow-text-accent">Shopmonkey ERP</span>
@@ -85,7 +88,7 @@ import CheckIcon from "../components/icons/CheckIcon.astro";
         </section>
 
         <section
-          class="flex items-center justify-center relative py-12 lg:py-0"
+          class="flex items-center justify-center relative my-12 py-12 lg:py-0"
         >
           <div class="flex items-center w-full max-w-lg mx-auto">
             <div class="flex flex-col items-center relative z-10">
@@ -105,31 +108,7 @@ import CheckIcon from "../components/icons/CheckIcon.astro";
                 class="absolute -top-8 text-[8px] md:text-xs text-dark-50 font-mono tracking-widest text-center rounded-full border border-primary-700 py-1 px-3"
                 >WEBHOOKS</span
               >
-              <svg
-                class="w-full h-8 md:h-12 preserve-3d"
-                viewBox="0 0 100 40"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,20 L30,20 L35,5 L45,35 L50,20 L100,20"
-                  stroke="var(--color-primary)"
-                  fill="none"
-                  stroke-width="2"
-                  class="glow-svg-primary"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-                <path
-                  d="M10,20 L90,20"
-                  stroke="var(--color-primary)"
-                  fill="none"
-                  stroke-width="1.5"
-                  opacity="0.4"
-                  class="pulse-line"></path>
-                <polygon
-                  points="95,15 100,20 95,25"
-                  fill="var(--color-primary)"
-                  class="glow-svg-primary"></polygon>
-              </svg>
+              <AnimatedConnector tone="primary" />
               <span
                 class="absolute -bottom-8 text-[8px] md:text-xs text-dark-50 font-mono tracking-widest text-center rounded-full border border-primary-700 py-1 px-3"
                 >API GET</span
@@ -153,31 +132,7 @@ import CheckIcon from "../components/icons/CheckIcon.astro";
                 class="absolute -top-8 text-[7px] md:text-xs text-dark-50 font-mono tracking-widest text-center rounded-full border border-accent py-1 px-3"
                 >&#123; x* &#125; REGEX</span
               >
-              <svg
-                class="w-full h-8 md:h-12"
-                viewBox="0 0 100 40"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,20 L40,20 L45,5 L55,35 L60,20 L100,20"
-                  stroke="var(--color-accent)"
-                  fill="none"
-                  stroke-width="2"
-                  class="glow-svg-accent"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"></path>
-                <path
-                  d="M10,20 L90,20"
-                  stroke="var(--color-accent)"
-                  fill="none"
-                  stroke-width="1.5"
-                  opacity="0.4"
-                  class="pulse-line"></path>
-                <polygon
-                  points="95,15 100,20 95,25"
-                  fill="var(--color-accent)"
-                  class="glow-svg-accent"></polygon>
-              </svg>
+              <AnimatedConnector tone="accent" />
               <span
                 class="absolute -bottom-8 text-[7px] md:text-xs text-dark-50 font-mono tracking-widest text-center rounded-full border border-accent py-1 px-3"
                 >SKU <span class="mx-1">→</span> ERP</span
@@ -255,7 +210,6 @@ import CheckIcon from "../components/icons/CheckIcon.astro";
 </StandaloneLayout>
 
 <style>
-  /* ... Tus estilos se mantienen exactamente igual que en el código anterior ... */
   .panel-bg {
     background-color: var(--color-dark);
   }
@@ -316,15 +270,5 @@ import CheckIcon from "../components/icons/CheckIcon.astro";
 
   .glow-svg-white {
     filter: drop-shadow(0 0 8px var(--color-dark-50));
-  }
-
-  @keyframes dash {
-    to {
-      stroke-dashoffset: -20;
-    }
-  }
-  .pulse-line {
-    stroke-dasharray: 5, 5;
-    animation: dash 1s linear infinite;
   }
 </style>

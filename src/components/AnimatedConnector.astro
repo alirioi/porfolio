@@ -1,0 +1,52 @@
+---
+interface Props {
+  tone?: "primary" | "accent";
+}
+
+const { tone = "primary" } = Astro.props;
+
+const strokeColor =
+  tone === "accent" ? "var(--color-accent)" : "var(--color-primary)";
+const glowClass = tone === "accent" ? "glow-svg-accent" : "glow-svg-primary";
+---
+
+<svg class="w-full h-8 md:h-12" viewBox="0 0 100 40" preserveAspectRatio="none">
+  <path
+    d="M0,20 L40,20 L45,5 L55,35 L60,20 L100,20"
+    stroke={strokeColor}
+    fill="none"
+    stroke-width="2"
+    class={glowClass}
+    stroke-linecap="round"
+    stroke-linejoin="round"></path>
+  <path
+    d="M10,20 L90,20"
+    stroke={strokeColor}
+    fill="none"
+    stroke-width="1.5"
+    opacity="0.4"
+    class="pulse-line"></path>
+  <polygon points="95,15 100,20 95,25" fill={strokeColor} class={glowClass}
+  ></polygon>
+</svg>
+
+<style>
+  .glow-svg-primary {
+    filter: drop-shadow(0 0 8px var(--color-primary));
+  }
+
+  .glow-svg-accent {
+    filter: drop-shadow(0 0 8px var(--color-accent));
+  }
+
+  @keyframes dash {
+    to {
+      stroke-dashoffset: -20;
+    }
+  }
+
+  .pulse-line {
+    stroke-dasharray: 5, 5;
+    animation: dash 1s linear infinite;
+  }
+</style>
