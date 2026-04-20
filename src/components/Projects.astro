@@ -100,10 +100,10 @@ const PROJECTS = [
         <div class="w-full md:w-1/2 md:max-w-lg">
           <h3 class="text-2xl font-bold text-accent">{title}</h3>
           <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-x-2">
+            <ul class="flex flex-row mb-2 gap-2 flex-wrap">
               {tags.map((tag) => (
                 <li>
-                  <span class="flex gap-x-2 rounded-full border border-primary-700 text-dark-50 text-xs md:text-[11px] lg:text-xs py-1 px-3 ">
+                  <span class="flex gap-x-2 rounded-full border border-primary-700 text-dark-50 text-xs md:text-[11px] lg:text-xs py-1 px-3 flex items-center transition duration-300 hover:bg-primary-700/10 cursor-pointer text-nowrap">
                     <tag.icon class="size-4" />
                     {tag.name}
                   </span>
