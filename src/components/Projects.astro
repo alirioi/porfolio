@@ -82,10 +82,12 @@ const PROJECTS = [
 ];
 ---
 
-<article class="w-full flex flex-col gap-y-12">
+<article
+  class="w-full flex flex-row gap-x-4 overflow-x-auto snap-x snap-mandatory px-4 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:flex-col md:gap-y-12 md:gap-x-0 md:overflow-visible md:snap-none md:px-0"
+>
   {
     PROJECTS.map(({ title, description, tags, image, github, link }) => (
-      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+      <article class="flex min-w-[82vw] max-w-[82vw] shrink-0 snap-start flex-col space-x-0 space-y-8 group rounded-2xl border border-dark-200/80 bg-dark/50 p-4 shadow-lg sm:min-w-[72vw] sm:max-w-[72vw] md:min-w-0 md:max-w-none md:flex-row md:space-x-8 md:space-y-0 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
             <Image
