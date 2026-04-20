@@ -5,6 +5,7 @@ import Css from "./icons/CSS.astro";
 import GitHubIcon from "./icons/GitHub.astro";
 import Html from "./icons/HTML.astro";
 import JavaScript from "./icons/JavaScript.astro";
+import ChevronRightIcon from "./icons/ChevronRightIcon.astro";
 import LinkButton from "./LinkButton.astro";
 import LinkIcon from "./icons/Link.astro";
 import React from "./icons/React.astro";
@@ -82,54 +83,61 @@ const PROJECTS = [
 ];
 ---
 
-<article
-  class="w-full flex flex-row gap-x-4 overflow-x-auto snap-x snap-mandatory px-4 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:flex-col md:gap-y-12 md:gap-x-0 md:overflow-visible md:snap-none md:px-0"
->
-  {
-    PROJECTS.map(({ title, description, tags, image, github, link }) => (
-      <article class="flex min-w-[82vw] max-w-[82vw] shrink-0 snap-start flex-col space-x-0 space-y-8 group rounded-2xl border border-dark-200/80 bg-dark/50 p-4 shadow-lg sm:min-w-[72vw] sm:max-w-[72vw] md:min-w-0 md:max-w-none md:flex-row md:space-x-8 md:space-y-0 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
-        <div class="w-full md:w-1/2">
-          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <Image
-              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              src={image}
-              alt={`Captura de pantalla del proyecto ${title}`}
-              loading="lazy"
-            />
-          </div>
-        </div>
+<div class="w-full">
+  <div class="mb-4 flex items-center gap-2 text-sm text-dark-400 md:hidden">
+    <ChevronRightIcon class="size-4 shrink-0 rotate-90 text-primary-300" />
+    <span>Desliza para ver más proyectos</span>
+  </div>
 
-        <div class="w-full md:w-1/2 md:max-w-lg">
-          <h3 class="text-2xl font-bold text-accent">{title}</h3>
-          <div class="flex flex-wrap mt-2">
-            <ul class="flex flex-row mb-2 gap-2 flex-wrap">
-              {tags.map((tag) => (
-                <li>
-                  <span class="flex gap-x-2 rounded-full border border-primary-700 text-dark-50 text-xs md:text-[11px] lg:text-xs py-1 px-3 flex items-center transition duration-300 hover:bg-primary-700/10 cursor-pointer text-nowrap">
-                    <tag.icon class="size-4" />
-                    {tag.name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <div class="mt-2 text-dark-50">{description}</div>
+  <article
+    class="w-full flex flex-row gap-x-4 overflow-x-auto snap-x snap-mandatory px-4 pb-4 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden md:flex-col md:gap-y-12 md:gap-x-0 md:overflow-visible md:snap-none md:px-0"
+  >
+    {
+      PROJECTS.map(({ title, description, tags, image, github, link }) => (
+        <article class="flex min-w-[82vw] max-w-[82vw] shrink-0 snap-start flex-col space-x-0 space-y-8 group rounded-2xl border border-dark-200/80 bg-dark/50 p-4 shadow-lg sm:min-w-[72vw] sm:max-w-[72vw] md:min-w-0 md:max-w-none md:flex-row md:space-x-8 md:space-y-0 md:rounded-none md:border-0 md:bg-transparent md:p-0 md:shadow-none">
+          <div class="w-full md:w-1/2">
+            <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+              <Image
+                class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+                src={image}
+                alt={`Captura de pantalla del proyecto ${title}`}
+                loading="lazy"
+              />
+            </div>
           </div>
-          <footer class="flex items-end justify-start mt-4 gap-x-4">
-            {github && (
-              <LinkButton href={github}>
-                <GitHubIcon class="size-6" />
-                Code
-              </LinkButton>
-            )}
-            {link && (
-              <LinkButton href={link}>
-                <LinkIcon class="size-4" />
-                Preview
-              </LinkButton>
-            )}
-          </footer>
-        </div>
-      </article>
-    ))
-  }
-</article>
+
+          <div class="w-full md:w-1/2 md:max-w-lg">
+            <h3 class="text-2xl font-bold text-accent">{title}</h3>
+            <div class="flex flex-wrap mt-2">
+              <ul class="flex flex-row mb-2 gap-2 flex-wrap">
+                {tags.map((tag) => (
+                  <li>
+                    <span class="flex gap-x-2 rounded-full border border-primary-700 text-dark-50 text-xs md:text-[11px] lg:text-xs py-1 px-3 flex items-center transition duration-300 hover:bg-primary-700/10 cursor-pointer text-nowrap">
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-2 text-dark-50">{description}</div>
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHubIcon class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <LinkIcon class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </article>
+      ))
+    }
+  </article>
+</div>
