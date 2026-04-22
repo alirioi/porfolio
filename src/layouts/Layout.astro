@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import "../../src/styles/global.css";
 import "@fontsource-variable/inter";
 
 interface Props {
@@ -49,33 +50,3 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
-
-<style is:global>
-  @import "tailwindcss";
-
-  @theme {
-    --color-primary: #4caf50; /* #4CAF50 */
-    --color-primary-300: #81c784; /* Hover/Interactivos*/
-    --color-primary-700: #388e3c; /* Bordes/Detalles*/
-
-    --color-dark: #111111; /* Fondo principal */
-    --color-dark-200: #424242; /* Bordes secundarios */
-    --color-dark-400: #757575; /* Texto secundario*/
-    --color-dark-50: #fafafa; /* Texto principal */
-
-    --color-accent: #00f7ff; /*Destacar elementos clave*/
-  }
-  * {
-    box-sizing: border-box;
-  }
-  html {
-    font-family: "Inter Variable", sans-serif;
-    scroll-behavior: smooth;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
-</style>

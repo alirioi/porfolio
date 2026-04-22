@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/inter";
+import "../../src/styles/global.css";
 
 interface Props {
   title: string;
@@ -28,35 +29,3 @@ const { title, description } = Astro.props;
     <slot />
   </body>
 </html>
-
-<style is:global>
-  @import "tailwindcss";
-
-  @theme {
-    --color-primary: #4caf50;
-    --color-primary-300: #81c784;
-    --color-primary-700: #388e3c;
-
-    --color-dark: #111111;
-    --color-dark-200: #424242;
-    --color-dark-400: #757575;
-    --color-dark-50: #fafafa;
-
-    --color-accent: #00f7ff;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  html {
-    font-family: "Inter Variable", sans-serif;
-    scroll-behavior: smooth;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
-</style>
