@@ -33,14 +33,6 @@ import Contact from "../components/Contact.astro";
       <Projects />
     </SectionContainer>
 
-    <SectionContainer id="sobre-mi" class="mb-24 md:mb-32">
-      <TitleSection>
-        <ProfileIcon class="size-7" />
-        Sobre mí
-      </TitleSection>
-      <AboutMe />
-    </SectionContainer>
-
     <SectionContainer id="conocimientos" class="mb-24 md:mb-32">
       <TitleSection>
         <SchoolIcon class="size-7" />
@@ -48,16 +40,24 @@ import Contact from "../components/Contact.astro";
       </TitleSection>
 
       <TitleSection class="text-xl text-accent">
-        <CertificateIcon class="size-6" />
-        Certificaciones
-      </TitleSection>
-      <Certificates />
-
-      <TitleSection class="text-xl text-accent">
         <StarIcon class="size-6" />
         Tecnologías
       </TitleSection>
       <Technologies />
+
+      <TitleSection class="text-xl text-accent mt-24 md:mt-32">
+        <CertificateIcon class="size-6" />
+        Certificaciones
+      </TitleSection>
+      <Certificates />
+    </SectionContainer>
+
+    <SectionContainer id="sobre-mi" class="mb-24 md:mb-32">
+      <TitleSection>
+        <ProfileIcon class="size-7" />
+        Sobre mí
+      </TitleSection>
+      <AboutMe />
     </SectionContainer>
 
     <SectionContainer id="contacto" class="mb-24 md:mb-32">
