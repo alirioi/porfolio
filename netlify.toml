@@ -15,3 +15,9 @@
   to = "https://alirioi-movieapp.netlify.app/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/weather-app/*"
+  to = "https://alirioi-weather.netlify.app/:splat"
+  status = 200
+  force = true
