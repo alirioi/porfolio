@@ -123,13 +123,13 @@ const PROJECTS = [
             </div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
-                <LinkButton href={github}>
+                <LinkButton href={github} aria-label={`Ver el código fuente del proyecto ${title}`}>
                   <GitHubIcon class="size-6" />
                   Code
                 </LinkButton>
               )}
               {link && (
-                <LinkButton href={link}>
+                <LinkButton href={link} aria-label={`Ir a la web oficial del proyecto ${title}`}>
                   <LinkIcon class="size-4" />
                   Preview
                 </LinkButton>

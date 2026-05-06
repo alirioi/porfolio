@@ -1,9 +1,10 @@
 ---
-const { class: className, id } = Astro.props;
+const { class: className, id, "aria-labelledby": ariaLabelledBy } = Astro.props;
 ---
 
 <section
   id={id}
+  aria-labelledby={ariaLabelledBy}
   class={`${className} scroll-m-20 w-full mx-auto lg:max-w-4xl md:max-w-2xl`}
 >
   <slot />

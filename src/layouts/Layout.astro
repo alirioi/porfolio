@@ -21,12 +21,12 @@ const { title, description } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
-    <meta
-      name="keywords"
-      content="Desarrollador Frontend, React Developer, Astro Framework, Tailwind CSS, Full Stack Developer, Node.js, Desarrollo Web Mérida Venezuela, Alirio Isea, JavaScript"
-    />
+    <meta name="keywords" content="Desarrollador Frontend, React Developer, Astro Framework, Tailwind CSS, Full Stack Developer, Node.js, Desarrollo Web Mérida Venezuela, Alirio Isea, JavaScript" />
     <meta name="author" content="Alirio Isea" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#171717" />
     <link rel="canonical" href="https://alirioi.dev" />
+    <link rel="manifest" href="/manifest.json" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://alirioi.dev/" />
@@ -38,6 +38,22 @@ const { title, description } = Astro.props;
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="https://alirioi.dev/og-image.jpg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alirio Isea",
+        "url": "https://alirioi.dev",
+        "image": "https://alirioi.dev/og-image.jpg",
+        "sameAs": [
+          "https://www.linkedin.com/in/alirioi/",
+          "https://www.github.com/alirioi"
+        ],
+        "jobTitle": "Frontend Developer",
+        "description": "Desarrollador Frontend de Mérida, Venezuela, especializado en crear experiencias web rápidas y escalables con React y Astro."
+      }
+    </script>
   </head>
 
   <body class="bg-neutral-950 flex flex-col min-h-screen">
