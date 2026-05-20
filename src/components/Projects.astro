@@ -13,9 +13,12 @@ import Tailwind from "./icons/Tailwind.astro";
 import Node from "./icons/Nodejs.astro";
 import API from "./icons/API.astro";
 import Serveless from "./icons/Serveless.astro";
+import Postgres from "./icons/PostgreSQL.astro";
+import Telegram from "./icons/Telegram.astro";
 import shopifyImg from "../assets/projects/shopify-middleware.webp";
 import ecommerceImg from "../assets/projects/ecommerce.webp";
 import todoImg from "../assets/projects/todo.webp";
+import dolarBotImg from "../assets/projects/dolar-bot.webp";
 
 const TAGS = {
   HTML: {
@@ -50,9 +53,26 @@ const TAGS = {
     name: "Serverless",
     icon: Serveless,
   },
+  DATABASE: {
+    name: "PostgreSQL / Supabase",
+    icon: Postgres,
+  },
+  TELEGRAM: {
+    name: "Telegram API",
+    icon: Telegram,
+  },
 };
 
 const PROJECTS = [
+  {
+    title: "Telegram Bot: VES Tasa Monitor",
+    description:
+      "Bot de Telegram robusto para el monitoreo en tiempo real del mercado cambiario en Venezuela. Incorpora calculadora inteligente de divisas cruzadas, generación de recibos visuales y alertas automatizadas.",
+    link: "/ves-monitor-bot",
+    github: "https://github.com/alirioi/ves-monitor-bot",
+    image: dolarBotImg,
+    tags: [TAGS.NODE, TAGS.DATABASE, TAGS.TELEGRAM],
+  },
   {
     title: "Middleware: Shopify - Shopmonkey ERP",
     description:
@@ -112,7 +132,7 @@ const PROJECTS = [
               <ul class="flex flex-row mb-2 gap-2 flex-wrap">
                 {tags.map((tag) => (
                   <li>
-                    <span class="flex gap-x-2 rounded-full border border-primary-700 text-dark-50 text-xs md:text-[11px] lg:text-xs py-1 px-3 flex items-center transition duration-300 hover:bg-primary-700/10 cursor-pointer text-nowrap">
+                    <span class="flex gap-x-2 rounded-full border border-primary-700 text-dark-50 text-xs md:text-[11px] lg:text-xs py-1 px-3 items-center transition duration-300 hover:bg-primary-700/10 cursor-pointer text-nowrap">
                       <tag.icon class="size-4" />
                       {tag.name}
                     </span>
@@ -123,13 +143,19 @@ const PROJECTS = [
             </div>
             <footer class="flex items-end justify-start mt-4 gap-x-4">
               {github && (
-                <LinkButton href={github} aria-label={`Ver el código fuente del proyecto ${title}`}>
+                <LinkButton
+                  href={github}
+                  aria-label={`Ver el código fuente del proyecto ${title}`}
+                >
                   <GitHubIcon class="size-6" />
                   Code
                 </LinkButton>
               )}
               {link && (
-                <LinkButton href={link} aria-label={`Ir a la web oficial del proyecto ${title}`}>
+                <LinkButton
+                  href={link}
+                  aria-label={`Ir a la web oficial del proyecto ${title}`}
+                >
                   <LinkIcon class="size-4" />
                   Preview
                 </LinkButton>

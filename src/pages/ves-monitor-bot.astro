@@ -1,0 +1,301 @@
+---
+import StandaloneLayout from "../layouts/StandaloneLayout.astro";
+import { Image } from "astro:assets";
+import dolarBotLogo from "../assets/projects/dolar-bot-logo.png";
+
+import TriangleAlertIcon from "../components/icons/TriangleAlertIcon.astro";
+import ChevronRightIcon from "../components/icons/ChevronRightIcon.astro";
+import CheckIcon from "../components/icons/CheckIcon.astro";
+import LightbulbIcon from "../components/icons/LightbulbIcon.astro";
+import AnimatedConnector from "../components/AnimatedConnector.astro";
+
+import TelegramIcon from "../components/icons/Telegram.astro";
+import NodeIcon from "../components/icons/Nodejs.astro";
+import DatabaseIcon from "../components/icons/PostgreSQL.astro";
+---
+
+<StandaloneLayout
+  title="VES Tasa Monitor: Telegram Bot"
+  description="Bot de Telegram robusto y eficiente para monitorear el mercado cambiario en Venezuela. Incluye conversiones y recibos PNG."
+>
+  <main class="min-h-screen mb-12 p-5 md:p-8 flex items-center justify-center">
+    <div class="max-w-7xl w-full flex flex-col gap-6">
+      <header
+        class="panel-bg border border-dark-200 rounded-xl p-6 flex flex-col items-center justify-between relative overflow-hidden my-12"
+      >
+        <div class="z-10 w-full text-center flex flex-col items-center">
+          <div
+            class="mb-6 rounded-full p-1.5 md:p-2 bg-gray-200 shadow-[0_8px_30px_rgb(0,0,0,0.4)] shadow-accent/40"
+          >
+            <Image
+              src={dolarBotLogo}
+              alt="Logo VES Tasa Monitor"
+              class="size-20 md:size-28 rounded-full"
+            />
+          </div>
+          <h1
+            class="text-2xl md:text-3xl font-bold text-dark-50 mb-2 uppercase"
+          >
+            <span class="text-dark-50">Telegram Bot:</span>
+            <span class="glow-text-primary">VES Tasa Monitor</span>
+          </h1>
+          <h2
+            class="text-dark-400 text-xs md:text-base tracking-widest uppercase font-semibold mt-2"
+          >
+            Monitoreo automatizado y calculadora inteligente de divisas
+          </h2>
+
+          <div class="mt-6">
+            <a
+              href="https://t.me/ves_monitor_bot"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-accent/10 border border-accent/30 text-accent hover:bg-accent hover:text-dark transition-all duration-300 font-semibold tracking-wide"
+            >
+              <TelegramIcon class="size-5" />
+              Probar en Vivo
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="hidden md:flex absolute inset-0 items-center justify-center pointer-events-none opacity-80"
+        >
+        </div>
+      </header>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr_1fr] gap-6">
+        <section
+          class="flex flex-col gap-4 border-r-0 lg:border-r border-dark-200 pr-0 lg:pr-6"
+        >
+          <div class="flex items-center gap-4 mb-2">
+            <TriangleAlertIcon
+              class="w-10 h-10 glow-text-primary glow-svg-primary"
+            />
+            <h3 class="text-xl font-bold text-dark-50 ml-2">El Reto</h3>
+          </div>
+
+          <div
+            class="panel-bg p-4 rounded-lg glow-border-primary flex items-start gap-3"
+          >
+            <ChevronRightIcon
+              class="size-5 text-primary mt-0.5 flex-shrink-0"
+            />
+            <p class="text-sm text-dark-50 leading-relaxed">
+              Fluctuación constante de precios en Venezuela y dificultad para
+              consultar rápidamente múltiples tasas (Oficial, Paralelo).
+            </p>
+          </div>
+
+          <div
+            class="panel-bg p-4 rounded-lg glow-border-primary flex items-start gap-3"
+          >
+            <ChevronRightIcon
+              class="size-5 text-primary mt-0.5 flex-shrink-0"
+            />
+            <p class="text-sm text-dark-50 leading-relaxed">
+              Lentitud y errores al realizar conversiones cruzadas entre VES,
+              USD y EUR en transacciones del día a día.
+            </p>
+          </div>
+
+          <div
+            class="panel-bg p-4 rounded-lg glow-border-primary flex items-start gap-3"
+          >
+            <ChevronRightIcon
+              class="size-5 text-primary mt-0.5 flex-shrink-0"
+            />
+            <p class="text-sm text-dark-50 leading-relaxed">
+              Ausencia de notificaciones automatizadas que avisen de manera
+              inmediata cuando el BCV actualiza su tasa oficial.
+            </p>
+          </div>
+        </section>
+
+        <section
+          class="flex items-center justify-center relative my-12 py-12 lg:py-0"
+        >
+          <div class="flex items-center w-full max-w-lg mx-auto">
+            <div class="flex flex-col items-center relative z-10">
+              <div
+                class="p-3 bg-dark rounded-xl border border-dark-200 glow-border-white"
+              >
+                <TelegramIcon
+                  class="size-8 md:size-12"
+                />
+              </div>
+            </div>
+
+            <div
+              class="flex-1 flex flex-col items-center justify-center relative -mx-2 z-0"
+            >
+              <span
+                class="absolute -top-8 text-[8px] md:text-xs text-dark-50 font-mono tracking-widest text-center rounded-full border border-primary-700 py-1 px-3"
+                >COMANDOS</span
+              >
+              <AnimatedConnector tone="primary" />
+              <span
+                class="absolute -bottom-8 text-[8px] md:text-xs text-dark-50 font-mono tracking-widest text-center rounded-full border border-primary-700 py-1 px-3"
+                >RECIBOS</span
+              >
+            </div>
+
+            <div class="flex flex-col items-center relative z-10">
+              <div
+                class="p-4 bg-dark rounded-full border border-dark-200 glow-border-primary"
+              >
+                <NodeIcon
+                  class="size-8 md:size-12"
+                />
+              </div>
+            </div>
+
+            <div
+              class="flex-1 flex flex-col items-center justify-center relative -mx-2 z-0"
+            >
+              <span
+                class="absolute -top-8 text-[7px] md:text-xs text-dark-50 font-mono tracking-widest text-center rounded-full border border-accent py-1 px-3"
+                >CRON JOBS</span
+              >
+              <AnimatedConnector tone="accent" />
+              <span
+                class="absolute -bottom-8 text-[7px] md:text-xs text-dark-50 font-mono tracking-widest text-center rounded-full border border-accent py-1 px-3"
+                >DATA <span class="mx-1">→</span> API</span
+              >
+            </div>
+
+            <div class="flex flex-col items-center relative z-10">
+              <div
+                class="p-3 bg-dark rounded-xl border border-dark-200 glow-border-accent"
+              >
+                <DatabaseIcon
+                  class="size-8 md:size-12"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="flex flex-col gap-4 border-l-0 lg:border-l border-dark-200 pl-0 lg:pl-6"
+        >
+          <div
+            class="flex items-center gap-4 mb-2 justify-end lg:justify-start"
+          >
+            <h3
+              class="text-xl font-bold text-dark-50 mr-2 lg:mr-0 order-2 lg:order-last"
+            >
+              La Solución
+            </h3>
+            <LightbulbIcon
+              class="size-10 glow-text-accent glow-svg-accent order-1 lg:order-first"
+            />
+          </div>
+
+          <div
+            class="panel-bg p-4 rounded-lg glow-border-accent flex items-start gap-3"
+          >
+            <CheckIcon class="size-5 text-accent mt-0.5 flex-shrink-0" />
+            <p class="text-sm text-dark-50 leading-relaxed">
+              <strong class="text-white block mb-1 font-semibold"
+                >Calculadora Inteligente:</strong
+              >
+              Soporte para conversiones cruzadas y reconocimiento flexible de formatos
+              numéricos con JS.
+            </p>
+          </div>
+
+          <div
+            class="panel-bg p-4 rounded-lg glow-border-accent flex items-start gap-3"
+          >
+            <CheckIcon class="size-5 text-accent mt-0.5 flex-shrink-0" />
+            <p class="text-sm text-dark-50 leading-relaxed">
+              <strong class="text-white block mb-1 font-semibold"
+                >Recibos Visuales:</strong
+              >
+              Generación de imágenes profesionales (PNG) utilizando Skia-Canvas para
+              compartir cotizaciones al instante.
+            </p>
+          </div>
+
+          <div
+            class="panel-bg p-4 rounded-lg glow-border-accent flex items-start gap-3"
+          >
+            <CheckIcon class="size-5 text-accent mt-0.5 flex-shrink-0" />
+            <p class="text-sm text-dark-50 leading-relaxed">
+              <strong class="text-white block mb-1 font-semibold"
+                >Alertas Automatizadas:</strong
+              >
+              Base de datos en Supabase para suscriptores y tareas cron programadas
+              para notificar cada actualización de tasa oficial.
+            </p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</StandaloneLayout>
+
+<style>
+  .panel-bg {
+    background-color: var(--color-dark);
+  }
+  .glow-border-primary {
+    border: 1px solid var(--color-primary-700);
+    box-shadow: inset 0 0 10px rgba(76, 175, 80, 0.05);
+    transition: all 0.3s ease;
+  }
+  .glow-border-primary:hover {
+    border-color: var(--color-primary);
+    box-shadow:
+      0 0 15px rgba(76, 175, 80, 0.2),
+      inset 0 0 10px rgba(76, 175, 80, 0.1);
+  }
+  .glow-text-primary {
+    text-shadow: 0 0 12px var(--color-primary);
+    color: var(--color-primary);
+  }
+  .glow-svg-primary {
+    filter: drop-shadow(0 0 8px var(--color-primary));
+  }
+  .glow-border-accent {
+    border: 1px solid rgba(0, 247, 255, 0.3);
+    box-shadow: inset 0 0 10px rgba(0, 247, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+  .glow-border-accent:hover {
+    border-color: var(--color-accent);
+    box-shadow:
+      0 0 15px rgba(0, 247, 255, 0.2),
+      inset 0 0 10px rgba(0, 247, 255, 0.1);
+  }
+  .glow-text-accent {
+    text-shadow: 0 0 12px var(--color-accent);
+    color: var(--color-accent);
+  }
+  .glow-svg-accent {
+    filter: drop-shadow(0 0 8px var(--color-accent));
+  }
+
+  .glow-border-white {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+  }
+
+  .glow-border-white:hover {
+    border-color: var(--color-dark-50);
+    box-shadow:
+      0 0 15px rgba(255, 255, 255, 0.2),
+      inset 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+
+  .glow-text-white {
+    text-shadow: 0 0 12px var(--color-dark-50);
+    color: var(--color-dark-50);
+  }
+
+  .glow-svg-white {
+    filter: drop-shadow(0 0 8px var(--color-dark-50));
+  }
+</style>
